@@ -2,15 +2,15 @@
 
 import React, { useEffect } from "react";
 import CardSlide from "./slides/card-slide";
-import {cardWidth, cardMargin} from "./slides/card-slide/styles.module.scss";
-import styles from './styles.module.scss';
+import {cardWidth} from "./slides/card-slide/styles.module.scss";
+import styles, {cardMargin} from './styles.module.scss';
 
 export default function SliderComponent({ data }) {
     const [slideArray, setSlideArray] = React.useState([]);
     const [focus, setFocus] = React.useState(0);
     const [prevFocus, setPrev] = React.useState(0);
     const [offset, setOffset] = React.useState(0);
-    const cardJump = parseInt(cardWidth, 10) + parseInt(cardMargin, 10) * 2;
+    const cardJump = parseInt(cardWidth, 10) + parseInt(cardMargin, 10);
 
     useEffect(() => {
         document.addEventListener('keydown', navigateSlider);
@@ -69,5 +69,7 @@ export default function SliderComponent({ data }) {
             setFocus(focus - 1);
     }
     
-    return <div className={styles.container} style={{left: `-${offset}px`}}>{slideArray}</div>;
+    return <div className={styles.slider}>
+        <div className={styles.container} style={{left: `-${offset}px`}}>{slideArray}</div>
+        </div>;
 }

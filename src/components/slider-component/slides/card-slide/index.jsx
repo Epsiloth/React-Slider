@@ -15,10 +15,12 @@ export default function CardSlide({ data, id, focus }) {
     const img = extractImg(data);
 
 
-    return <div id={`slide_${id}`} className={`${styles.card}${focus === id ? ` ${styles.focused}` : ''}`} style={{backgroundImage: `url(${img})`}}>
-        <div className={styles.footer}>
-            <div className={styles.title}>{data?.title} - {data?.year}</div>
-            <div className={styles.description}>{shortenDesc(data?.synopsis)}</div>
+    return <div className={styles.wrapper}>
+        <div id={`slide_${id}`} className={`${styles.card}${focus === id ? ` ${styles.focused}` : ''}`} style={{backgroundImage: `url(${img})`}}>
+            <div className={styles.footer}>
+                <div className={styles.title}>{data?.title} - {data?.year}</div>
+                <div className={styles.description}>{shortenDesc(data?.synopsis)}</div>
+            </div>
         </div>
     </div>
 }

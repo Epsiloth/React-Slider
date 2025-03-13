@@ -1,6 +1,23 @@
-.container {
-    transition: all 100ms;
-    width: max-content;
+$card-margin: 10px;
+
+.slider {
     position: absolute;
-    top: 25%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    .container {
+        transition: all 250ms;
+        width: max-content;
+        position: absolute;
+        display: table;
+
+        border-spacing: $card-margin;
+        
+        top: 20%;
+        left: 0;
+    }
+}
+
+:export {
+    cardMargin: $card-margin;
 }
