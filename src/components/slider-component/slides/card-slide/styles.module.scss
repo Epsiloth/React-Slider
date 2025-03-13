@@ -1,0 +1,55 @@
+$card-width: 400px;
+$card-height: 600px;
+$card-margin: 10px;
+
+.card {
+    width: $card-width;
+    height: $card-height;
+
+    border-radius: 3%;
+
+    background-size: contain;
+    overflow: hidden;
+
+    position: relative;
+    display: inline-block;
+
+    margin: 0px $card-margin;
+
+    &:hover, &.focused {
+        transition: all, 50ms;
+        
+        width: $card-width * 1.1;
+        height: $card-height * 1.1;
+
+        border: 3px solid white;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+
+        background: linear-gradient(0deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,0.6) 80%);
+
+        padding: 0px 8px;
+
+        .title {
+            font-size: 24px;
+            text-transform: uppercase;
+
+            margin-bottom: 8px;
+        }
+
+        .description {
+            font-size: 16px;
+
+            margin-bottom: 10px;
+        }
+    }
+}
+
+:export {
+    cardWidth: $card-width;
+    cardHeight: $card-height;
+    cardMargin: $card-margin;
+}
