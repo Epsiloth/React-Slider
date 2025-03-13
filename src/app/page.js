@@ -6,7 +6,7 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
-      <title className={styles.title}>React Next Slider</title>
+      <title className={styles.title}>React NextJs Slider</title>
       <main className={styles.main}>
         <Main />
       </main>
